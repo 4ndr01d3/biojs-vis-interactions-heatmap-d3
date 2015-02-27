@@ -1,0 +1,11 @@
+[
+"proteinClick",
+"proteinMouseOver",
+"proteinMouseOut",
+"interactionClick",
+"interactionMouseOver",
+"interactionMouseOut",
+"sizeChanged",
+"transformOverSVG",
+"onSorted"
+]
