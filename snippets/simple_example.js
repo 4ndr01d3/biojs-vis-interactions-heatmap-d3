@@ -1,7 +1,7 @@
 // if you don't specify a html file, the sniper will generate a div
 var app = require("biojs-vis-interactions-heatmap-d3");
 var instance = new app({
-  target: "thediv", 
+  target: "snippetDiv", 
 			width: 700,
 			height: 350
 }); 
@@ -14,10 +14,20 @@ for (var pid=1;pid<=30;pid++)
 
 
 instance.restart();
+
+//paint the proteins
+for (var pid=1;pid<=15;pid++)
+	  for (var pid2=pid+1;pid2<=15;pid2++){
+	    var rgb = "rgb("+(256-pid*10)+","+pid2*10+",0)";
+	    instance.setFillColor("#cell_prot_"+pid+"_prot_"+pid2,rgb);
+	    instance.setFillColor("#cell_prot_"+pid2+"_prot_"+pid,rgb);
+	  }
+
+
+//play with the events to make it interactive
 instance.on("proteinMouseOver", function( p ) {
     instance.activateProteins([p.protein]);
 });
-
 instance.on("proteinMouseOut", function( p ) {
     instance.deactivateProteins();
 });
@@ -27,7 +37,7 @@ instance.on("interactionMouseOver", function( p ) {
 instance.on("interactionMouseOut", function( p ) {
     instance.deactivateProteins();
 });
-
+//show the features information in the panels
 var selected = null;
 instance.on("interactionClick", function( d ) {
   if ("#cell_"+d.interaction.id==selected){
