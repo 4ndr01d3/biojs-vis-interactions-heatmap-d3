@@ -1,7 +1,7 @@
 {
   "name": "biojs-vis-interactions-heatmap-d3",
   "description": "represent a network of protein interactions in a heatmap",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "homepage": "https://github.com/4ndr01d3/biojs-vis-interactions-heatmap-d3",
   "author": {
     "name": "4ndr01d3",
